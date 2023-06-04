@@ -23,6 +23,12 @@ a dla {stats["cons_count"]} opinii podana została lista jego wad.
 
 stars = opinions.score.value_counts().reindex(list(np.arange(0,5.5,0.5)), fill_value=0)
 stars.plot.bar()
+
+plt.show()
+recommendation_counts = opinions.recommendation.value_counts(dropna=False)
+recommendation_counts.plot.pie(autopct='%1.1f%%', startangle=90)
+plt.axis('equal')
+plt.legend(title="Rekomendacja")
 plt.show()
 
 print(opinions)
